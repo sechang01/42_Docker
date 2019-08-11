@@ -1,0 +1,5 @@
+#Print the environment variables of the spawning-pool container in one command
+
+docker exec spawning-pool env
+
+#https://stackoverflow.com/questions/34051747/get-environment-variable-from-docker-container

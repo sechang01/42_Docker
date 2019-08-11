@@ -1,0 +1,8 @@
+#Create a volume named hatchery
+
+docker volume create hatchery
+
+#https://docs.docker.com/engine/reference/commandline/volume_create/
+#to check: docker volume ls
+#When a container is deleted, any data written to the container that is not stored in a data volume is deleted along with the container.
+#https://docs.docker.com/storage/volumes/

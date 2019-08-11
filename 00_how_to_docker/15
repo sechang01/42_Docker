@@ -1,0 +1,12 @@
+#Launch a phpmyadmin container, as a background task, which should be named roach-warden
+#80 port should be bound to the 8081 port of the virtual machine
+#should be able to explore the database stored in the spawning-pool container
+
+docker run -d --name roach-warden -p 8081:80 --link spawning-pool:db phpmyadmin/phpmyadmin
+
+#image full name is phpmyadmin/phpmyadmin
+#database service link: https://docs.docker.com/network/links/
+#--link flag: Links allow containers to discover each other and securely transfer information about one container to another container. When you set up a link, you create a conduit between a source container and a recipient container. The recipient can then access select data about the source.
+#--link <name or id>:alias
+#Where name is the name of the container we’re linking to and alias is an alias for the link name.
+#to check link: docker inspect -f "{{ .HostConfig.Links }}" roach-warden

@@ -1,0 +1,6 @@
+#Create a local swarm
+#the Char virtual machine should be its manager
+
+docker swarm init --advertise-addr $(docker-machine ip Char)
+
+#Create a swarm: https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/

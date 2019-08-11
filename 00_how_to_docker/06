@@ -1,0 +1,18 @@
+#6 - Launch an nginx container, available on Docker Hub, as a background task. It
+# should be named overlord, be able to restart on its own, and have its 80 port
+# attached to the 5000 port of Char. You can check that your container functions
+# properly by visiting
+# http://<ip-de-char>:5000 on your web browser.
+
+docker pull nginx
+docker run -d -p 5000:80 --name overlord nginx
+
+#https://docs.docker.com/samples/library/nginx/
+#enginex, apache uses port 80 by default mysql uses 3306. 5000 is the port you want to use locally.
+# d is detached - run in background 
+# p is publish - port
+# name is adding a name - overlord
+# --env VARIABLE=value - setting an environment variable
+# docker container exect -it overlord bash - goes into container
+# exit to leave
+# cd usr/share/nginx/html/index.html is what the default page runs

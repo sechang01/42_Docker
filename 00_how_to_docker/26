@@ -1,0 +1,12 @@
+#Launch a 42school/engineering-bay service in two replicas
+#make sure that the service works properly
+#This service will be named engineering-bay and will be on the overmind network
+
+docker service create -d --network overmind --name engineering-bay --replicas 2 -e OC_USERNAME=sechang -e OC_PASSWD=password 42school/engineering-bay
+
+#REPLICATED OR GLOBAL SERVICES: https://docs.docker.com/engine/swarm/services/#placement-constraints
+#how to use 42school/engineering-bay: https://hub.docker.com/r/42school/engineering-bay/
+#You must have an orbital-command running on your host or swarm, accessible with the same name into your network.
+#To connect to this orbital-command, you must set a
+#OC_USERNAME : Username used to access to orbital-command
+#OC_PASSWD : Password used to access to orbital-command

@@ -1,0 +1,12 @@
+#Launch a mysql container, which is named spawning-pool
+#restart on its own in case of error
+#root password of the database should be Kerrigan
+#database is stored in the hatchery volume
+#container directly creates a database named zerglings
+
+docker run -d --name spawning-pool --restart on-failure -e MYSQL_ROOT_PASSWORD=Kerrigan -v hatchery/var/lib/mysql -e MYSQL_DATABASE="zerglings" mysql
+
+#Start containers in case of error: https://docs.docker.com/config/containers/start-containers-automatically/
+#mysql commands: https://docs.docker.com/samples/library/mysql/
+#volume -v: https://docs.docker.com/storage/volumes/
+#check: docker inspect -f '{{ .Config.Env }}' spawning-pool

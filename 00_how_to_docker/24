@@ -1,0 +1,14 @@
+#Launch a rabbitmq SERVICE that will be named orbital-command
+#define a specific user and password for the RabbitMQ service
+#This service will be on the overmind network
+
+docker service create --name orbital-command -e RABBITMQ_DEFAULT_USER=sechang -e RABBITMQ_DEFAULT_PASS=password --network overmind rabbitmq:latest
+
+#deploy services to swarm: https://docs.docker.com/engine/swarm/services/
+#1.Configure the runtime environment: set user and password
+#2.Connect the service to an overlay network
+#A service is a group of containers of the same image:tag
+#https://docs.docker.com/v17.12/docker-cloud/getting-started/your_first_service/
+#only can set by running rabbitmq's container: https://hub.docker.com/_/rabbitmq
+#to check: docker service inspect --pretty orbital-command
+#or just to check use setting: docker service inspect -f '{{.Spec.TaskTemplate.ContainerSpec.Env}}' orbital-command

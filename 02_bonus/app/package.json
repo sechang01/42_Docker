@@ -1,0 +1,12 @@
+{
+	"name": "42_Docker",
+	"version": "1.0",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "^4.15.4",
+		"body-parser": "^1.15.2",
+		"mongoose": "^4.7.2"
+	}
+}

@@ -1,0 +1,5 @@
+#Increase the number of copies of the marines service up to twenty
+
+docker service scale marines=20
+
+#docker service scale: https://docs.docker.com/engine/reference/commandline/service_scale/

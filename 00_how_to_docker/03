@@ -1,0 +1,10 @@
+#03 - Define the variables needed by your virtual machine Char in the general env of your
+# terminal, so that you can run the docker ps command without errors. You have
+# to fix all four environment variables with one command, and you are not allowed
+# to use your shell’s builtin to set these variables by hand.
+
+eval $(docker-machine env Char)
+
+#https://docs.docker.com/machine/reference/env/
+#docker ps lists all the "process statuses" including all the running containers
+#docker ps -a sees all the containers running in the background

@@ -1,0 +1,9 @@
+#Launch a wordpress container, as a background task, which will be named lair
+#80 port should be bound to the 8080 port of the virtual machine
+#use the spawning-pool container as a database service
+#access lair on your machine via a web browser, with the IP address of the virtual machine as a URL
+
+docker run -d -p 8080:80 --name lair --link spawning-pool:db wordpress
+
+#list docker container: https://docs.docker.com/engine/reference/commandline/container_ls/
+#ctrl-d to exit the session:https://vsupalov.com/exit-docker-container/
